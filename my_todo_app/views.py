@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-#Hello programmers, this is nothing but some tests to make sure that Git is Working
+#Hello programmers, this is nothing but some tests to make sure that Git is Working...
 
 
 def index(request):
