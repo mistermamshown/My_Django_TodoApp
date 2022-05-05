@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'my_todo_app/style.css' %}">
+        
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo Lsit:</h1>
+    <form action="{% url 'salah:add' %}" method="POST">
+        {%csrf_token%}
+        <input type="text" name="todo">
+        <input type="submit" value="Add">
+    </form>
+    <h1> {{x}} </h1>
+    {% if todo_list %}
+    {% for todo in todo_list %}
+    
+        <h1 style="color:yellow;">- {{todo.my_todo}} <a href="{% url 'salah:delete' todo.id %}" style="margin-left: 20px;"> Delete {{todo.id}}</a> </h4>
+    
+
+    {% endfor %}
+    {%else %}
+    <h1 style="color:blue">Zero item in the datebase</h4>
+    {% endif %}
+</body>
+</html>
