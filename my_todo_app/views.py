@@ -5,6 +5,8 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+#Hello programmers, this is nothing but some tests to make sure that Git is Working
+
 
 def index(request):
     todo_list = TodoList.objects.order_by('-pub_date')[:5]
